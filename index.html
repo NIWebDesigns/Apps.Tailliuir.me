@@ -10,7 +10,7 @@
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function () {
       var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
+          s0 = document.getElementsByTagName("script")[0];
       s1.async = true;
       s1.src = 'https://embed.tawk.to/62cb6f017b967b117998e919/1ibcd5amh';
       s1.charset = 'UTF-8';
@@ -32,6 +32,7 @@
       background-color: #ff9800;
       justify-content: center;
       flex-wrap: wrap;
+      padding: 0.5em 0;
     }
 
     .tab-button {
@@ -49,31 +50,12 @@
     }
 
     .content-container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 1em auto;
       padding: 1em;
       background-color: #ffffff;
       border-radius: 8px;
       border: 1px solid #ddd;
-    }
-
-    .app-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 1em;
-      margin-top: 1em;
-    }
-
-    .app-button {
-      padding: 1em;
-      background-color: #ff9800;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-size: 1em;
-      font-weight: bold;
-      text-align: center;
-      display: block;
     }
 
     .tab-content {
@@ -83,70 +65,176 @@
     .tab-content.active {
       display: block;
     }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1em;
+      margin-top: 1em;
+    }
+
+    .app-card {
+      background-color: #fff3e0;
+      border: 1px solid #ffcc80;
+      border-radius: 8px;
+      padding: 1em;
+      text-align: center;
+    }
+
+    .app-card h3 {
+      margin: 0 0 0.5em;
+      color: #e08900;
+    }
+
+    .app-link {
+      display: block;
+      margin: 0.25em 0;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .app-link.backup {
+      color: #d32f2f;
+    }
+
+    @media (max-width: 600px) {
+      .tab-button {
+        padding: 0.5em 1em;
+        font-size: 0.95em;
+      }
+    }
   </style>
 </head>
 <body>
 
   <!-- Top Navigation Tabs -->
-  <div class="tab-bar">
-    <button class="tab-button active" onclick="showTab('iptv')">IPTV</button>
-    <button class="tab-button" onclick="showTab('movies')">Paid Movies & TVShows</button>
-    <button class="tab-button" onclick="showTab('free')">Free Movies & TVShows</button>
-    <button class="tab-button" onclick="showTab('freeapp')">Retro Games</button>
-  </div>
+  <nav class="tab-bar">
+    <button class="tab-button active" onclick="showTab('iptv', event)">IPTV</button>
+    <button class="tab-button" onclick="showTab('movies', event)">Paid Movies & TVShows</button>
+    <button class="tab-button" onclick="showTab('free', event)">Free Movies & TVShows</button>
+    <button class="tab-button" onclick="showTab('freeapp', event)">Retro Games</button>
+  </nav>
 
   <!-- App Grid Content -->
-  <div class="content-container">
+  <section class="content-container">
 
+    <!-- IPTV Section -->
     <div id="iptv" class="tab-content active">
       <div class="app-grid">
-        <a href="https://aftv.news/1611380" class="app-button">App Store</a>
-        <a href="https://aftv.news/719062" class="app-button">TiviMate</a>
-        <a href="https://aftv.news/224250" class="app-button">TV-S3</a>
-        <a href="https://aftv.news/480086" class="app-button">Q</a>
-        <a href="https://aftv.news/186365" class="app-button">IBO Pro</a>
-        <a href="https://aftv.news/162497" class="app-button">IBO Pro - Sports</a>
+        <div class="app-card">
+          <h3>App Store</h3>
+          <a href="https://aftv.news/1611380" class="app-link" target="_blank" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="app-card">
+          <h3>TiviMate</h3>
+          <a href="https://aftv.news/719062" class="app-link" target="_blank" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="app-card">
+          <h3>TV-S3</h3>
+          <a href="https://aftv.news/224250" class="app-link" target="_blank" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="app-card">
+          <h3>Q</h3>
+          <a href="https://aftv.news/480086" class="app-link" target="_blank" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="app-card">
+          <h3>IBO Pro</h3>
+          <a href="https://aftv.news/186365" class="app-link" target="_blank" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="app-card">
+          <h3>IBO Pro - Sports</h3>
+          <a href="https://aftv.news/162497" class="app-link" target="_blank" rel="noopener noreferrer">Download</a>
+        </div>
       </div>
     </div>
 
+    <!-- Paid Movies Section -->
     <div id="movies" class="tab-content">
       <div class="app-grid">
-        <a href="https://aftv.news/859203" class="app-button">TVFlix</a>
-        <a href="https://aftv.news/238826" class="app-button">Stremio</a>
+        <div class="app-card">
+          <h3>TVFlix</h3>
+          <a href="https://aftv.news/859203" class="app-link" target="_blank" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="app-card">
+          <h3>Stremio</h3>
+          <a href="https://aftv.news/238826" class="app-link" target="_blank" rel="noopener noreferrer">Download</a>
+        </div>
       </div>
     </div>
 
+    <!-- Free Movies Section -->
     <div id="free" class="tab-content">
       <div class="app-grid">
-        <a href="https://onstreamapk.to" class="app-button">On Stream</a>
-        <a href="https://stremio.com/" class="app-button">Stremio</a>
-        <a href="https://syncler.net/" class="app-button">Syncler</a>
-        <a href="https://github.com/fvision8/fvreleases/releases" class="app-button">FlixVision</a>
-        <a href="https://syncler.net/" class="app-button">Syncler</a>
+
+        <div class="app-card">
+          <h3>On Stream</h3>
+          <a href="https://onstreamapk.to" class="app-link" target="_blank" rel="noopener noreferrer">Official Website</a>
+          <a href="https://onstreamapk.to/latest.apk" class="app-link" target="_blank" rel="noopener noreferrer">Direct Download</a>
+          <a href="https://yourdomain.com/downloads/onstream.apk" class="app-link backup" target="_blank" rel="noopener noreferrer">Backup Download</a>
+        </div>
+
+        <div class="app-card">
+          <h3>Stremio</h3>
+          <a href="https://stremio.com" class="app-link" target="_blank" rel="noopener noreferrer">Official Website</a>
+          <a href="https://www.stremio.com/downloads" class="app-link" target="_blank" rel="noopener noreferrer">Direct Download</a>
+          <a href="https://yourdomain.com/downloads/stremio.apk" class="app-link backup" target="_blank" rel="noopener noreferrer">Backup Download</a>
+        </div>
+
+        <div class="app-card">
+          <h3>Syncler</h3>
+          <a href="https://syncler.net" class="app-link" target="_blank" rel="noopener noreferrer">Official Website</a>
+          <a href="https://syncler.net/dl" class="app-link" target="_blank" rel="noopener noreferrer">Direct Download</a>
+          <a href="https://yourdomain.com/downloads/syncler.apk" class="app-link backup" target="_blank" rel="noopener noreferrer">Backup Download</a>
+        </div>
+
+        <div class="app-card">
+          <h3>FlixVision</h3>
+          <a href="https://github.com/fvision8/fvreleases/releases" class="app-link" target="_blank" rel="noopener noreferrer">Official GitHub</a>
+          <a href="https://github.com/fvision8/fvreleases/releases/latest/download/app-release.apk" class="app-link" target="_blank" rel="noopener noreferrer">Direct Download</a>
+          <a href="https://yourdomain.com/downloads/flixvision.apk" class="app-link backup" target="_blank" rel="noopener noreferrer">Backup Download</a>
+        </div>
+
+        <div class="app-card">
+          <h3>Flixoid</h3>
+          <a href="https://flixoid.godaddysites.com" class="app-link" target="_blank" rel="noopener noreferrer">Official Website</a>
+          <a href="https://flixoid.godaddysites.com/download" class="app-link" target="_blank" rel="noopener noreferrer">Direct Download</a>
+          <a href="https://yourdomain.com/downloads/flixoid.apk" class="app-link backup" target="_blank" rel="noopener noreferrer">Backup Download</a>
+        </div>
+
+        <div class="app-card">
+          <h3>HDO</h3>
+          <a href="https://hdo.app/" class="app-link" target="_blank" rel="noopener noreferrer">Official Website</a>
+          <a href="https://hdo.app/latest.apk" class="app-link" target="_blank" rel="noopener noreferrer">Direct Download</a>
+          <a href="https://yourdomain.com/downloads/hdo.apk" class="app-link backup" target="_blank" rel="noopener noreferrer">Backup Download</a>
+        </div>
+
       </div>
     </div>
 
+    <!-- Retro Games Section -->
     <div id="freeapp" class="tab-content">
       <div class="app-grid">
-        <a href="https://www.vivatv.io/" class="app-button">Viva TV</a>
-        <a href="https://stremio.com/" class="app-button">Stremio</a>
-        <a href="https://syncler.net/" class="app-button">Syncler</a>
+        <div class="app-card">
+          <h3>Viva TV</h3>
+          <a href="https://www.vivatv.io/" class="app-link" target="_blank" rel="noopener noreferrer">Official Website</a>
+          <a href="https://www.vivatv.io/download/" class="app-link" target="_blank" rel="noopener noreferrer">Direct Download</a>
+          <a href="https://yourdomain.com/downloads/vivatv.apk" class="app-link backup" target="_blank" rel="noopener noreferrer">Backup Download</a>
+        </div>
+        <!-- Add more apps here if needed -->
       </div>
     </div>
 
-  </div>
+  </section>
 
   <script>
-    function showTab(tabId) {
-      // Hide all tab contents
+    function showTab(tabId, event) {
       const allTabs = document.querySelectorAll('.tab-content');
       allTabs.forEach(tab => tab.classList.remove('active'));
 
-      // Remove active from all buttons
       const allButtons = document.querySelectorAll('.tab-button');
       allButtons.forEach(btn => btn.classList.remove('active'));
 
-      // Show selected tab content and highlight button
       document.getElementById(tabId).classList.add('active');
       event.target.classList.add('active');
     }
